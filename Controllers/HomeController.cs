@@ -14,13 +14,18 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-
     public IActionResult Index()
     {
         return View();
     }
-
+    
     public IActionResult Privacy()
+    {
+        return View();
+    }
+    
+    [Authorize(Roles = "Admin")]
+    public IActionResult Roles()
     {
         return View();
     }
